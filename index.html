@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/a586115660.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Expense Tracker App</title>
+  </head>
+  <body data-page="home">
+    <header>
+      <div class="app-identity">
+        <h1 class="">FinTrack</h1>
+        <i
+          class="fa-solid fa-bars hamburger-icon nav-open-btn"
+          style="color: #ffffff"
+        ></i>
+      </div>
+    </header>
+
+    <nav class="nav hidden">
+      <ul>
+        <li><a href="/index.html">Dashboard</a></li>
+        <li><a href="">Transactions</a></li>
+        <li><a href="">Budgets</a></li>
+        <li><a href="/index.html">Reports</a></li>
+        <li><a href="/index.html">Settings</a></li>
+      </ul>
+    </nav>
+
+    <main class="dashboard">
+      <section class="main-dashboard-overview">
+        <div class="dashboard-highlight">
+          <h1>Dashboard</h1>
+          <a href="/addExpense.html">
+            <button><i class="fa-solid fa-plus"></i>Add Transaction</button>
+          </a>
+        </div>
+        <div class="spending">
+          <div>
+            <h6>Total Spending</h6>
+            <h2>$2,450</h2>
+          </div>
+        </div>
+
+        <div class="budget-balance-container">
+          <div class="budget">
+            <div>
+              <h6>Budget</h6>
+              <h2>$3000</h2>
+            </div>
+          </div>
+
+          <div class="balance">
+            <div>
+              <h6>Total Balance</h6>
+              <h2>$550</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="spending-overview">
+        <div>
+          <h3>Spending Overview</h3>
+          <div>
+            <p>Food</p>
+            <p>Transport</p>
+            <p>Entertainment</p>
+            <p>Utilities</p>
+            <p>Others</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="recent-transactions-container">
+        <h2>Recent Transactions</h2>
+        <div class="recent-transactions">
+          <div class="headings">
+            <h4>Descriptions</h4>
+            <h4>Category</h4>
+            <h4 class="hidden">Date</h4>
+            <h4>Amount</h4>
+          </div>
+          <hr />
+          <div class="transactions">
+            <ul class="transactions-list">
+              <li>
+                <p>Grocery shopping at local market</p>
+                <p>Food</p>
+                <p class="hidden">13-05-2025</p>
+                <p>-$150</p>
+              </li>
+              <hr />
+              <li>
+                <p>Bus Fare</p>
+                <p>Transportation</p>
+                <p class="hidden">14-05-2025</p>
+                <p>-$10</p>
+              </li>
+              <hr />
+              <li>
+                <p>Movie Night</p>
+                <p>Entertainment</p>
+                <p class="hidden">20-05-2025</p>
+                <p>-$14.5</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

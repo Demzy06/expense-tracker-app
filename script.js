@@ -3,17 +3,24 @@ const formInput = document.querySelector('.upload');
 const addExpenseBtn = document.querySelector('.add-expense-btn');
 const transactionsListParent = document.querySelector('.transactions-list');
 const openMenuBtn = document.querySelector('.nav-open-btn');
+const totalSpendingWidget = document.querySelector('.totalSpendValue')
 const menu = document.querySelector('.nav');
+
+const page = bodyEl.dataset.page;
+console.log(page);
 
 const state = {
   transactions: [],
 }
 
-
+const calcTotalSpending = function (transactions) {
+  const totalSpending = transactions.reduce((acc, trans) => {
+    return acc + +trans.amount
+  }, 0)
+  return totalSpending
+}
 
 window.addEventListener('DOMContentLoaded', function () {
-  const page = bodyEl.dataset.page;
-  console.log(page);
 
   if (page === 'add-expense') {
     const storage = localStorage.getItem('transactions');
@@ -24,7 +31,7 @@ window.addEventListener('DOMContentLoaded', function () {
       e.preventDefault()
       const dataArr = [...new FormData(formInput)]
       console.log(dataArr);
-      
+
       const data = Object.fromEntries(dataArr)
       state.transactions.push(data);
       localStorage.setItem('transactions', JSON.stringify(state.transactions))
@@ -42,6 +49,8 @@ window.addEventListener('DOMContentLoaded', function () {
   if (page !== 'add-expense') {
     const storage = localStorage.getItem('transactions');
     if (storage) state.transactions = (JSON.parse(storage));
+    const totalSpending = calcTotalSpending(state.transactions);
+    totalSpendingWidget.textContent = `$${totalSpending}`;
 
     const renderExpense = function (data) {
       transactionsListParent.innerHTML = '';

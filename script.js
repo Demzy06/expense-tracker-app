@@ -1,16 +1,18 @@
 const bodyEl = document.querySelector('body')
+const menu = document.querySelector('.nav');
 const formInput = document.querySelector('.upload');
 const addExpenseBtn = document.querySelector('.add-expense-btn');
 const transactionsListParent = document.querySelector('.transactions-list');
 const openMenuBtn = document.querySelector('.nav-open-btn');
-const totalSpendingWidget = document.querySelector('.totalSpendValue')
-const menu = document.querySelector('.nav');
+const totalSpendingWidget = document.querySelector('.total-spend-value')
+const totalBalanceWidget = document.querySelector('.total-balance-value')
 
 const page = bodyEl.dataset.page;
 console.log(page);
 
 const state = {
   transactions: [],
+  budget: '',
 }
 
 const calcTotalSpending = function (transactions) {
@@ -20,6 +22,10 @@ const calcTotalSpending = function (transactions) {
   return totalSpending
 }
 
+const calcTotalBalance = function (budget, totalSpending) {
+  return budget - totalSpending
+}
+// calcTotalBalance()
 window.addEventListener('DOMContentLoaded', function () {
 
   if (page === 'add-expense') {
@@ -46,11 +52,23 @@ window.addEventListener('DOMContentLoaded', function () {
     })
   };
 
+  // Home page code base
   if (page !== 'add-expense') {
     const storage = localStorage.getItem('transactions');
     if (storage) state.transactions = (JSON.parse(storage));
+
+    // Calling ftn to calculate total spending
     const totalSpending = calcTotalSpending(state.transactions);
     totalSpendingWidget.textContent = `$${totalSpending}`;
+
+    // Calling ftn to calculate total balance left and checking if the total balance is less than zero
+    const totalBalance = calcTotalBalance(3000, totalSpending);
+
+    totalBalanceWidget.textContent = totalBalance < 0 ?
+      `-$${Math.abs(totalBalance)}` : `$${totalBalance}`;
+
+
+    // totalBalanceWidget.textContent = `$${calcTotalBalance(3000, totalSpending).toString().replace('-', '')}`;
 
     const renderExpense = function (data) {
       transactionsListParent.innerHTML = '';
@@ -85,18 +103,3 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
 
-// const renderExpense = function (data) {
-//   data.forEach(entry => {
-//     const markup = `
-//       <li>
-//           <p>${entry.amount}</p>
-//            <p>${entry.category}</p>
-//           <p class="hidden">13-05-2025</p>
-//           <p>-$${entry.decription}</p>
-//         </li>
-//       <hr />
-//   `;
-//     transactionsListParent.insertAdjacentHTML("afterbegin", markup)
-//   })
-// }
-// renderExpense(state.transactions);

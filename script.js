@@ -28,6 +28,7 @@ const calcTotalBalance = function (budget, totalSpending) {
 // calcTotalBalance()
 window.addEventListener('DOMContentLoaded', function () {
 
+  // Add Expense page code base
   if (page === 'add-expense') {
     const storage = localStorage.getItem('transactions');
     if (storage) state.transactions = (JSON.parse(storage))
@@ -66,9 +67,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     totalBalanceWidget.textContent = totalBalance < 0 ?
       `-$${Math.abs(totalBalance)}` : `$${totalBalance}`;
-
-
-    // totalBalanceWidget.textContent = `$${calcTotalBalance(3000, totalSpending).toString().replace('-', '')}`;
+;
 
     const renderExpense = function (data) {
       transactionsListParent.innerHTML = '';

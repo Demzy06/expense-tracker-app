@@ -28,34 +28,39 @@ const calcTotalBalance = function (budget, totalSpending) {
   return budget - totalSpending
 }
 
-window.addEventListener('DOMContentLoaded', function () {
+const setItemLocalStorage = function (keyName, data) {
+  localStorage.setItem(keyName, JSON.stringify(data))
+}
 
+const getItemlLocalStorage = function (keyName) {
+  return localStorage.getItem(keyName)
+}
+
+
+window.addEventListener('DOMContentLoaded', function () {
   // Home page code base
   if (page === 'home') {
-    const storage = localStorage.getItem('transactions');
+    const storage = getItemlLocalStorage('transactions');
     if (storage) state.transactions = (JSON.parse(storage));
 
     // getting budget from the local storage
-    const budget = this.localStorage.getItem('budget');
+    const budget = getItemlLocalStorage('budget')
     if (budget) {
       state.budget = JSON.parse(budget);
       budgetWidget.textContent = state.budget;
     }
 
-
     // Calling ftn to calculate total spending
     const totalSpending = calcTotalSpending(state.transactions);
     totalSpendingWidget.textContent = `$${totalSpending}`;
 
-    // Calling ftn to calculate total balance left and checking if the total balance is less than zero
+    // Calling ftn to calculate total balance left 
+    // & Checking if the total balance is less than zero
     const totalBalance = calcTotalBalance(state.budget, totalSpending);
-
-    totalBalanceWidget.textContent = totalBalance < 0 ?
-      `-$${Math.abs(totalBalance)}` : `$${totalBalance}`;
-    ;
+    totalBalanceWidget.textContent = totalBalance < 0 ? `-$${Math.abs(totalBalance)}` : `$${totalBalance}`;
 
     const renderExpense = function (data) {
-      // transactionsListParent.innerHTML = '';
+      transactionsListParent.innerHTML = '';
       data.forEach(entry => {
 
         const markup = `
@@ -66,10 +71,8 @@ window.addEventListener('DOMContentLoaded', function () {
         <p>-$${entry.amount}</p>
         </li>
         <hr />
-  `;
+        `;
         transactionsListParent.insertAdjacentHTML("afterbegin", markup)
-        console.log('Hello');
-
       })
     }
     renderExpense(state.transactions);
@@ -78,28 +81,23 @@ window.addEventListener('DOMContentLoaded', function () {
     openMenuBtn.addEventListener('click', () => {
       menu.classList.toggle('hidden')
     })
-    // console.log(state);
-    // console.log(state.transactions);
   };
 
 
   // Add Expense page code base
   if (page === 'add-expense') {
-    const storage = localStorage.getItem('transactions');
-    if (storage) state.transactions = (JSON.parse(storage))
-
+    const storage = getItemlLocalStorage('transactions');
+    if (storage) state.transactions = (JSON.parse(storage));
 
     addExpenseBtn.addEventListener('click', function (e) {
       e.preventDefault()
       const dataArr = [...new FormData(formInput)]
-      console.log(dataArr);
 
       const data = Object.fromEntries(dataArr)
       state.transactions.push(data);
-      localStorage.setItem('transactions', JSON.stringify(state.transactions))
 
-      console.log(state);
-      console.log(data);
+      // setting expense to local storage
+      setItemLocalStorage('transactions', state.transactions)
     })
 
     // Event listeners
@@ -114,8 +112,7 @@ window.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       const budgetValue = budgetInput.value;
       state.budget = budgetValue;
-      localStorage.setItem('budget', JSON.stringify(state.budget))
-      console.log(state);
+      setItemLocalStorage('budget', state.budget)
     })
 
     // Event listeners

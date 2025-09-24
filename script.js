@@ -37,22 +37,25 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // getting budget from the local storage
     const budget = this.localStorage.getItem('budget');
-    state.budget = JSON.parse(budget);
-    budgetWidget.textContent = state.budget;
+    if (budget) {
+      state.budget = JSON.parse(budget);
+      budgetWidget.textContent = state.budget;
+    }
+
 
     // Calling ftn to calculate total spending
     const totalSpending = calcTotalSpending(state.transactions);
     totalSpendingWidget.textContent = `$${totalSpending}`;
 
     // Calling ftn to calculate total balance left and checking if the total balance is less than zero
-    const totalBalance = calcTotalBalance(3000, totalSpending);
+    const totalBalance = calcTotalBalance(state.budget, totalSpending);
 
     totalBalanceWidget.textContent = totalBalance < 0 ?
       `-$${Math.abs(totalBalance)}` : `$${totalBalance}`;
     ;
 
     const renderExpense = function (data) {
-      transactionsListParent.innerHTML = '';
+      // transactionsListParent.innerHTML = '';
       data.forEach(entry => {
 
         const markup = `
@@ -113,6 +116,11 @@ window.addEventListener('DOMContentLoaded', function () {
       state.budget = budgetValue;
       localStorage.setItem('budget', JSON.stringify(state.budget))
       console.log(state);
+    })
+
+    // Event listeners
+    openMenuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden')
     })
   }
 })

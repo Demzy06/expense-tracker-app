@@ -13,7 +13,9 @@
   <body data-page="home">
     <header>
       <div class="app-identity">
-        <h1 class="">FinTrack</h1>
+        <h1>
+          <a href="/index.html">FinTrack</a>
+        </h1>
         <i
           class="fa-solid fa-bars hamburger-icon nav-open-btn"
           style="color: #ffffff"
@@ -23,11 +25,51 @@
 
     <nav class="nav hidden">
       <ul>
-        <li><a href="/index.html">Dashboard</a></li>
-        <li><a href="">Transactions</a></li>
-        <li><a href="/budgetPage.html">Add / Update Budget</a></li>
-        <li><a href="/index.html">Reports</a></li>
-        <li><a href="/index.html">Settings</a></li>
+        <li>
+          <a href="/index.html"
+            ><img
+              src="/design/dashboardsvg.png"
+              class="nav_icons"
+              alt="dashboard-icon"
+            />Dashboard</a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><img
+              src="/design/receipt.png"
+              alt="receipt-icon"
+              class="nav_icons"
+            />Transactions</a
+          >
+        </li>
+        <li>
+          <a href="/budgetPage.html"
+            ><img
+              src="/design/budget.png"
+              alt="budget-icon"
+              class="nav_icons"
+            />Add / Update Budget</a
+          >
+        </li>
+        <li>
+          <a href="/index.html"
+            ><img
+              src="/design/bar.png"
+              alt="bar-icon"
+              class="nav_icons"
+            />Reports</a
+          >
+        </li>
+        <li>
+          <a href="/index.html"
+            ><img
+              src="/design/setting.png"
+              alt="setting-icon"
+              class="nav_icons"
+            />Settings</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -50,7 +92,7 @@
           <div class="budget">
             <div>
               <h6>Budget</h6>
-              <h2 class="budget-value">$3000</h2>
+              <h2 class="budget-value">$0</h2>
             </div>
           </div>
 
@@ -90,7 +132,7 @@
             <ul class="transactions-list">
               <li>
                 <p>Grocery shopping at local market</p>
-                <p>Food</p>
+                <p><span class="yo">Food</span></p>
                 <p class="hidden">13-05-2025</p>
                 <p>-$150</p>
               </li>

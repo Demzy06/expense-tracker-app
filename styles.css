@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Love+Light&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,9 +37,10 @@ header > div {
   align-items: center;
   margin-top: -2px;
 }
-header div > h1 {
+header div > h1 > a {
   color: #37da78;
   width: fit-content;
+  text-decoration: none;
 }
 header > div > i {
   font-size: 30px;
@@ -79,6 +79,17 @@ nav > ul > li {
 nav > ul > li > a {
   text-decoration: none;
   color: #ffffff;
+  /* padding: 3px; */
+}
+.nav_icons {
+  width: 25px;
+  height: 25px;
+  margin-bottom: -5px;
+  margin-right: 5px;
+}
+.zozo {
+  margin-bottom: -5px;
+  margin-right: 5px;
 }
 main {
   padding: 20px;
@@ -198,6 +209,12 @@ main {
 .headings > h4:nth-child(4) {
   width: 15%;
 }
+/* .yo{
+  background-color: #29382F;
+  border-radius: 10px;
+  padding: 5px;
+  height: 20rem;
+} */
 hr {
   height: 1px;
   width: 100%;
@@ -234,6 +251,7 @@ hr {
   color: #94ac9d;
   width: 35%;
   margin-right: 10px;
+  /* font-size: 14px; */
 }
 .transactions-list > li > p:nth-child(4) {
   color: #f1f1f1;

@@ -4,6 +4,7 @@ const formInput = document.querySelector('.upload');
 const addExpenseBtn = document.querySelector('.add-expense-btn');
 const transactionsListParent = document.querySelector('.transactions-list');
 const openMenuBtn = document.querySelector('.nav-open-btn');
+const closeMenuBtn = document.querySelector('.nav-close-btn')
 const totalSpendingWidget = document.querySelector('.total-spend-value')
 const totalBalanceWidget = document.querySelector('.total-balance-value')
 const budgetInput = document.querySelector('.budget-input');
@@ -15,6 +16,14 @@ console.log(page);
 const state = {
   transactions: [],
   budget: '',
+}
+
+const openCloseMenuFtn = function (btn) {
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden')
+    closeMenuBtn.classList.toggle('hidden')
+    openMenuBtn.classList.toggle('hidden')
+  })
 }
 
 const calcTotalSpending = function (transactions) {
@@ -36,7 +45,6 @@ const getItemlLocalStorage = function (keyName) {
   return localStorage.getItem(keyName)
 }
 
-
 window.addEventListener('DOMContentLoaded', function () {
   // Home page code base
   if (page === 'home') {
@@ -47,7 +55,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const budget = getItemlLocalStorage('budget')
     if (budget) {
       state.budget = JSON.parse(budget);
-      budgetWidget.textContent = state.budget;
+      budgetWidget.textContent = `$${state.budget}`;
     }
 
     // Calling ftn to calculate total spending
@@ -78,9 +86,8 @@ window.addEventListener('DOMContentLoaded', function () {
     renderExpense(state.transactions);
 
     // Event listeners
-    openMenuBtn.addEventListener('click', () => {
-      menu.classList.toggle('hidden')
-    })
+    openCloseMenuFtn(openMenuBtn)
+    openCloseMenuFtn(closeMenuBtn)
   };
 
 
@@ -101,9 +108,8 @@ window.addEventListener('DOMContentLoaded', function () {
     })
 
     // Event listeners
-    openMenuBtn.addEventListener('click', () => {
-      menu.classList.toggle('hidden')
-    })
+    openCloseMenuFtn(openMenuBtn)
+    openCloseMenuFtn(closeMenuBtn)
   };
 
 
@@ -116,9 +122,8 @@ window.addEventListener('DOMContentLoaded', function () {
     })
 
     // Event listeners
-    openMenuBtn.addEventListener('click', () => {
-      menu.classList.toggle('hidden')
-    })
+    openCloseMenuFtn(openMenuBtn)
+    openCloseMenuFtn(closeMenuBtn)
   }
 })
 

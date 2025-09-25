@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
     <script
       src="https://kit.fontawesome.com/a586115660.js"
       crossorigin="anonymous"
     ></script>
-    <title>Add Expense Page</title>
+    <title>Transaction Page</title>
   </head>
-  <body data-page="add-expense">
+  <body data-page="transactions-page">
+    </head>
+  <body data-page="home">
     <header>
       <div class="app-identity">
         <h1>
@@ -78,40 +80,9 @@
         </li>
       </ul>
     </nav>
+    <main>
 
-    <main class="container">
-      <div>
-        <h2>Add New Expense</h2>
-        <p>Enter the details of your expense below</p>
-      </div>
-      <section class="form-section">
-        <form class="upload">
-          <label for="amount">Amount</label>
-          <input type="text" name="amount" id="amount" placeholder="$ 0.00" />
-          <label for="category">Category</label>
-          <select name="category" id="category">
-            <option disabled selected>Select a category</option>
-            <option value="Food">Food</option>
-            <option value="Transportation">Transportation</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Utilities">Utilities</option>
-            <option value="Others">Others</option>
-          </select>
-          <label for="date">Date</label>
-          <input type="date" name="date" id="date" />
-          <label for="description">Description</label>
-          <textarea
-            name="description"
-            id="description"
-            placeholder="Add a description..."
-            value="Bought food at the market today"
-          ></textarea>
-          <div>
-            <button class="add-expense-btn">Add Expense</button>
-          </div>
-        </form>
-      </section>
     </main>
-    <script type="module" src="script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

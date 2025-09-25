@@ -45,6 +45,12 @@ header div > h1 > a {
 header > div > i {
   font-size: 30px;
 }
+header > div >img {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  margin-right: -5px;
+}
 @keyframes navmove {
   from {
     left: 100%;
@@ -79,7 +85,6 @@ nav > ul > li {
 nav > ul > li > a {
   text-decoration: none;
   color: #ffffff;
-  /* padding: 3px; */
 }
 .nav_icons {
   width: 25px;
@@ -94,6 +99,7 @@ nav > ul > li > a {
 main {
   padding: 20px;
 }
+
 /******************** Dashboard section ********************/
 .dashboard-highlight {
   display: flex;
@@ -209,12 +215,6 @@ main {
 .headings > h4:nth-child(4) {
   width: 15%;
 }
-/* .yo{
-  background-color: #29382F;
-  border-radius: 10px;
-  padding: 5px;
-  height: 20rem;
-} */
 hr {
   height: 1px;
   width: 100%;
@@ -332,4 +332,9 @@ form > div > button {
   background-color: #38e07b;
 }
 
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 /* Add Budget Page Styling*/

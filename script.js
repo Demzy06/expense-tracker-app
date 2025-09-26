@@ -10,6 +10,7 @@ const totalBalanceWidget = document.querySelector('.total-balance-value')
 const budgetInput = document.querySelector('.budget-input');
 const addBudgetBtn = document.querySelector('.add-budget-btn');
 const budgetWidget = document.querySelector('.budget-value');
+const clearTransactionsBtn = document.querySelector('.clear-transactions')
 const page = bodyEl.dataset.page;
 console.log(page);
 
@@ -67,6 +68,9 @@ window.addEventListener('DOMContentLoaded', function () {
     const totalBalance = calcTotalBalance(state.budget, totalSpending);
     totalBalanceWidget.textContent = totalBalance < 0 ? `-$${Math.abs(totalBalance)}` : `$${totalBalance}`;
 
+    const newTransactionsArr = state.transactions.slice(-5);
+    console.log(newTransactionsArr);
+
     const renderExpense = function (data) {
       transactionsListParent.innerHTML = '';
       data.forEach(entry => {
@@ -83,7 +87,7 @@ window.addEventListener('DOMContentLoaded', function () {
         transactionsListParent.insertAdjacentHTML("afterbegin", markup)
       })
     }
-    renderExpense(state.transactions);
+    renderExpense(newTransactionsArr);
 
     // Event listeners
     openCloseMenuFtn(openMenuBtn)
@@ -105,6 +109,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
       // setting expense to local storage
       setItemLocalStorage('transactions', state.transactions)
+
+      // Clearing form input
+      formInput.reset()
     })
 
     // Event listeners
@@ -119,11 +126,46 @@ window.addEventListener('DOMContentLoaded', function () {
       const budgetValue = budgetInput.value;
       state.budget = budgetValue;
       setItemLocalStorage('budget', state.budget)
+
+      // Clearing form input
+      budgetInput.value = '';
     })
 
     // Event listeners
     openCloseMenuFtn(openMenuBtn)
     openCloseMenuFtn(closeMenuBtn)
+  }
+
+  if (page === 'transactions-page') {
+    const storage = getItemlLocalStorage('transactions');
+    if (storage) state.transactions = (JSON.parse(storage));
+
+    const renderExpense = function (data) {
+      transactionsListParent.innerHTML = '';
+      data.forEach(entry => {
+
+        const markup = `
+        <li>
+        <p>${entry.description}</p>
+        <p>${entry.category}</p>
+        <p class="hidden">13-05-2025</p>
+        <p>-$${entry.amount}</p>
+        </li>
+        <hr />
+        `;
+        transactionsListParent.insertAdjacentHTML("afterbegin", markup)
+      })
+    }
+    renderExpense(state.transactions);
+
+    // Event listeners
+    openCloseMenuFtn(openMenuBtn)
+    openCloseMenuFtn(closeMenuBtn)
+
+    clearTransactionsBtn.addEventListener('click', function () {
+      localStorage.clear();
+      location.reload()
+    })
   }
 })
 

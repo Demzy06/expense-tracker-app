@@ -18,6 +18,15 @@ body {
   height: 100%;
   /* padding: 20px; */
 }
+/************************ General code ************************/
+div {
+  flex-wrap: wrap;
+}
+h2 {
+  word-break: break-all;
+}
+/*******************************  *******************************/
+
 header {
   height: 4rem;
   width: 100%;
@@ -45,7 +54,7 @@ header div > h1 > a {
 header > div > i {
   font-size: 30px;
 }
-header > div >img {
+header > div > img {
   width: 35px;
   height: 35px;
   padding: 0;
@@ -101,6 +110,9 @@ main {
 }
 
 /******************** Dashboard section ********************/
+.main-dashboard-overview {
+  height: fit-content;
+}
 .dashboard-highlight {
   display: flex;
   height: fit-content;
@@ -120,10 +132,12 @@ main {
 .spending {
   background-color: #111714;
   height: 6.6rem;
+  /* height: 50%; */
+  height: fit-content;
   width: 100%;
   border-radius: 10px;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .spending > div > h6 {
   color: #89a092;
@@ -136,13 +150,16 @@ main {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  height: fit-content;
 }
 .budget {
   background-color: #111714;
-  height: 6.6rem;
+  height: 33%;
+  /* height: 6.6rem; */
+  height: fit-content;
   width: 48%;
   border-radius: 10px;
-  padding: 20px;
+  padding: 25px;
 }
 .budget > div > h6 {
   color: #89a092;
@@ -154,10 +171,11 @@ main {
 
 .balance {
   background-color: #111714;
-  height: 6.6rem;
+  /* height: 6.6rem; */
+  height: fit-content;
   width: 48%;
   border-radius: 10px;
-  padding: 20px;
+  padding: 25px;
 }
 .balance > div > h6 {
   color: #89a092;
@@ -202,18 +220,19 @@ main {
   color: #ffffff;
   margin-bottom: 13px;
   width: 100%;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   padding: 10px;
 }
 .headings > h4:nth-child(1) {
-  width: 45%;
+  width: 40%;
+  margin-right: 8px;
 }
 .headings > h4:nth-child(2) {
-  width: 35%;
+  width: 34%;
   margin-right: 10px;
 }
 .headings > h4:nth-child(4) {
-  width: 15%;
+  width: 20%;
 }
 hr {
   height: 1px;
@@ -236,29 +255,32 @@ hr {
 .transactions-list > li {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 3rem;
+  height: fit-content;
   padding: 10px;
 }
 .transactions-list > li > p {
   height: fit-content;
 }
 .transactions-list > li > p:nth-child(1) {
-  width: 45%;
+  width: 42%;
+  margin-right: 8px;
   color: #acaeac;
 }
 .transactions-list > li > p:nth-child(2) {
   color: #94ac9d;
-  width: 35%;
+  width: 34%;
   margin-right: 10px;
-  /* font-size: 14px; */
+  word-break: break-all;
 }
 .transactions-list > li > p:nth-child(4) {
   color: #f1f1f1;
-  width: 15%;
+  width: 23%;
+  word-break: break-all;
 }
 
-/**************** Add expense page styling ****************/
+/**************** Add expense page and add budget page styling ****************/
 .container > div {
   text-align: center;
   margin-bottom: 20px;
@@ -336,5 +358,24 @@ button {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+  cursor: pointer;
 }
-/* Add Budget Page Styling*/
+button:hover {
+  background-color: #76eba5;
+}
+
+/* Transactions Page Styling*/
+.recent-transactions-container > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.recent-transactions-container > div:nth-child(1) > button {
+  height: fit-content;
+  border-radius: 5px;
+  color: #000100;
+  background-color: #38e07b;
+  padding: 5px;
+}

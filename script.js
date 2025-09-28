@@ -1,10 +1,14 @@
 const bodyEl = document.querySelector('body')
 const menu = document.querySelector('.nav');
-const formInput = document.querySelector('.upload');
-const addExpenseBtn = document.querySelector('.add-expense-btn');
-const transactionsListParent = document.querySelector('.transactions-list');
 const openMenuBtn = document.querySelector('.nav-open-btn');
 const closeMenuBtn = document.querySelector('.nav-close-btn')
+const formInput = document.querySelector('.upload');
+const amountInput = document.querySelector('.amount');
+const selectInput = document.querySelector('.select');
+const dateInput = document.querySelector('.date');
+const textareaInput = document.querySelector('.description')
+const addExpenseBtn = document.querySelector('.add-expense-btn');
+const transactionsListParent = document.querySelector('.transactions-list');
 const totalSpendingWidget = document.querySelector('.total-spend-value')
 const totalBalanceWidget = document.querySelector('.total-balance-value')
 const budgetInput = document.querySelector('.budget-input');
@@ -94,14 +98,20 @@ window.addEventListener('DOMContentLoaded', function () {
     openCloseMenuFtn(closeMenuBtn)
   };
 
+  const validateInputs = function () {
+    const amountInputValue = amountInput.value.trim()
+    const selectInputValue = amountInput.value
+    const dateInputValue = dateInput.value
+    const textareaInputValue = textareaInput.value.trim()
 
-  // Add Expense page code base
-  if (page === 'add-expense') {
-    const storage = getItemlLocalStorage('transactions');
-    if (storage) state.transactions = (JSON.parse(storage));
-
-    addExpenseBtn.addEventListener('click', function (e) {
-      e.preventDefault()
+    if (amountInputValue === '' || selectInputValue === '' || dateInputValue === '' || textareaInputValue === '') {
+      amountInput.classList.add('input-form-error')
+      selectInput.classList.add('input-form-error')
+      dateInput.classList.add('input-form-error')
+      textareaInput.classList.add('input-form-error')
+      console.log("Fill all inputs");
+    }
+    else {
       const dataArr = [...new FormData(formInput)]
 
       const data = Object.fromEntries(dataArr)
@@ -112,6 +122,17 @@ window.addEventListener('DOMContentLoaded', function () {
 
       // Clearing form input
       formInput.reset()
+    }
+  }
+
+  // Add Expense page code base
+  if (page === 'add-expense') {
+    const storage = getItemlLocalStorage('transactions');
+    if (storage) state.transactions = (JSON.parse(storage));
+
+    addExpenseBtn.addEventListener('click', function (e) {
+      e.preventDefault()
+      validateInputs()
     })
 
     // Event listeners
@@ -122,6 +143,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   if (page === 'budget-page') {
     addBudgetBtn.addEventListener('click', function (e) {
+
       e.preventDefault();
       const budgetValue = budgetInput.value;
       state.budget = budgetValue;

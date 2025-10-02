@@ -88,12 +88,13 @@
         <form class="budget-upload">
           <label for="budget">Enter Budget / Update Budget</label>
           <input
-            type="text"
+            type="number"
             name="budget"
             class="budget-input"
             id=""
             placeholder="$ 0.00"
           />
+          <p class="error-msg hidden">This field is required</p>
           <div>
             <button class="add-budget-btn">Add Budget</button>
           </div>
@@ -101,6 +102,6 @@
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script type="module" src="/src/js/script.js"></script>
   </body>
 </html>

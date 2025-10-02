@@ -8,6 +8,8 @@
       src="https://kit.fontawesome.com/a586115660.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <title>Expense Tracker App</title>
   </head>
   <body data-page="home">
@@ -114,13 +116,14 @@
       <section class="spending-overview">
         <div>
           <h3>Spending Overview</h3>
-          <div>
+          <canvas style="width: 800px" id="acquisitions"></canvas></div>
+          <!-- <div>
             <p>Food</p>
             <p>Transport</p>
             <p>Entertainment</p>
             <p>Utilities</p>
             <p>Others</p>
-          </div>
+          </div> -->
         </div>
       </section>
 
@@ -162,6 +165,6 @@
       </section>
     </main>
 
-    <script type="module" src="script.js"></script>
+    <script type="module" src="/src/js/script.js"></script>
   </body>
 </html>

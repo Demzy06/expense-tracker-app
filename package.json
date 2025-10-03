@@ -1,0 +1,16 @@
+{
+  "name": "expense-tracker-app",
+  "version": "1.0.0",
+  "description": "Expense tracker app",
+  "default" : "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build" : "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Olayode Ademola",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.5.0",
+    "parcel": "^2.16.0"
+  }
+}

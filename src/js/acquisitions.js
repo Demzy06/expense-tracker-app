@@ -8,8 +8,6 @@ if (page === 'home') {
   ctx = document.getElementById('acquisitions').getContext('2d');
 }
 
-console.log(localStorage.getItem('label'))
-console.log(localStorage.getItem('data'))
 
 
 const getItemlLocalStorage = function (keyName) {
@@ -23,7 +21,6 @@ const setItemLocalStorage = function (keyName, data) {
 const getChartData = function () {
   setItemLocalStorage('label', spendingChart.data.labels)
   setItemLocalStorage('data', spendingChart.data.datasets[0].data)
-  // setItemLocalStorage('chartBackgroundColor', spendingChart.data.datasets[0].backgroundColor)
 }
 
 export const spendingChart = new Chart(ctx, {
@@ -33,12 +30,12 @@ export const spendingChart = new Chart(ctx, {
     datasets: [{
       label: 'Spending',
       data: getItemlLocalStorage('data') ? JSON.parse(getItemlLocalStorage('data')) : [],
-      // backgroundColor: getItemlLocalStorage('chartBackgroundColor') ? JSON.parse(getItemlLocalStorage('chartBackgroundColor')) : [],
       backgroundColor: [
         '#ef4444', // Food (red)
         '#3b82f6', // Transport (blue)
         '#facc15', // Entertainment (yellow)
-        '#22c55e'  // Bills (green)
+        '#22c55e',  // Utilities (green)
+        '#0b00aaff' // Others(purple)
       ],
       borderWidth: 0
     }]
@@ -68,7 +65,6 @@ export const updateChart = function (category, amount) {
   } else {
     spendingChart.data.labels.push(category)
     spendingChart.data.datasets[0].data.push(amount)
-    // spendingChart.data.datasets[0].backgroundColor.push('#' + Math.floor(Math.random() * 16777215).toString(16));
 
     // Get chart details from local storage
     getChartData()

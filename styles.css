@@ -205,10 +205,10 @@ main {
   border-radius: 8px;
   margin-bottom: 15px;
 }
-.spending-overview > div > div {
-  /* display: flex; */
-  /* justify-content: space-evenly; */
-}
+/* .spending-overview > div > div {
+  display: flex;
+  justify-content: space-evenly;
+} */
 .spending-overview > div > div > p {
   color: #98b0a2;
   font-size: 14px;

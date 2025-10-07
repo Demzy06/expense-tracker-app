@@ -118,7 +118,12 @@ window.addEventListener('DOMContentLoaded', function () {
     selectInput.classList.add('input-form-error')
     dateInput.classList.add('input-form-error')
     textareaInput.classList.add('input-form-error')
+
+     // Error styling for small screen size
     errorMessage.forEach(el => el.classList.remove('hidden'))
+
+    // Error styling for large screen size
+    errorMessage.forEach(el => el.classList.remove('hidden-lg'))
   }
 
   const removeError = function () {
@@ -127,7 +132,11 @@ window.addEventListener('DOMContentLoaded', function () {
     dateInput.classList.remove('input-form-error')
     textareaInput.classList.remove('input-form-error')
 
+    // Remove error for small screen size
     errorMessage.forEach(el => el.classList.add('hidden'))
+
+    // Remove error for big screen size
+    errorMessage.forEach(el => el.classList.add('hidden-lg'))
   }
 
   const validateInputs = function () {

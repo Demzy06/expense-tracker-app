@@ -1,392 +1,1603 @@
 @import url("https://fonts.googleapis.com/css2?family=Love+Light&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-* {
-  box-sizing: border-box;
-  margin: 0;
-  border: 0;
-}
-html {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.hidden {
-  display: none;
-}
-body {
-  background-color: #1a231f;
-  width: 100%;
-  height: 100%;
-  /* padding: 20px; */
-}
-/************************ General code ************************/
-div {
-  flex-wrap: wrap;
-}
-h2 {
-  word-break: break-all;
-}
-.input-form-error {
-  /* border: 0.5px solid #fc2e2e; */
-  border: 0.5px solid #D73328;
-}
-.error-msg {
-  font-size: 13px;
-  color: #D73328;
-  margin-bottom: 5px;
-  margin-top: -5px;
 
-}
-/*******************************  *******************************/
-
-header {
-  height: 4rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  background-color: #1a231f;
-  padding: 20px;
-}
-header > div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: -2px;
-}
-header div > h1 > a {
-  color: #37da78;
-  width: fit-content;
-  text-decoration: none;
-}
-header > div > i {
-  font-size: 30px;
-}
-header > div > img {
-  width: 35px;
-  height: 35px;
-  padding: 0;
-  margin-right: -5px;
-}
-@keyframes navmove {
-  from {
-    left: 100%;
+@media (max-width: 767px) {
+  /* Your mobile styles here */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
   }
-  to {
-    left: 0%;
+  html {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .hidden {
+    display: none;
+  }
+  body {
+    background-color: #1a231f;
+    width: 100%;
+    height: 100%;
+  }
+  /************************ General code ************************/
+  div {
+    flex-wrap: wrap;
+  }
+  h2 {
+    word-break: break-all;
+  }
+  .input-form-error {
+    border: 0.5px solid #d73328;
+  }
+  .error-msg {
+    font-size: 13px;
+    color: #d73328;
+    margin-bottom: 5px;
+    margin-top: -5px;
+  }
+  /*******************************  *******************************/
+
+  header {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: #1a231f;
+    padding: 10px 20px 10px 20px;
+  }
+  header > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -2px;
+  }
+  header div > h1 > a {
+    color: #37da78;
+    width: fit-content;
+    text-decoration: none;
+  }
+  header > div > i {
+    font-size: 30px;
+  }
+  header > div > img {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin-right: -5px;
+  }
+  @keyframes navmove {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 0%;
+    }
+  }
+  nav {
+    width: 100%;
+    height: 95vh;
+    padding: 20px;
+    margin-top: 50px;
+    position: fixed;
+    background-color: #1a231f;
+    animation: navmove 0.5s ease-in;
+  }
+  nav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  nav > ul > li {
+    color: #000100;
+    font-size: 20px;
+    width: 100%;
+    height: 4rem;
+    text-align: center;
+    align-items: center;
+  }
+  nav > ul > li > a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .nav_icons {
+    width: 25px;
+    height: 25px;
+    margin-bottom: -5px;
+    margin-right: 5px;
+  }
+  .zozo {
+    margin-bottom: -5px;
+    margin-right: 5px;
+  }
+  main {
+    padding: 20px;
+  }
+
+  /******************** Dashboard section ********************/
+  .main-dashboard-overview {
+    height: fit-content;
+  }
+  .dashboard-highlight {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  .dashboard-highlight > h1 {
+    color: #ffffff;
+  }
+  .dashboard-highlight > a > button {
+    height: 2rem;
+    border-radius: 5px;
+    color: #000100;
+    background-color: #38e07b;
+  }
+  .spending {
+    background-color: #111714;
+    height: 6.6rem;
+    height: fit-content;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+  }
+  .spending > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+  }
+  .spending > div > h2 {
+    color: #ffffff;
+  }
+  .budget-balance-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: fit-content;
+  }
+  .budget {
+    background-color: #111714;
+    height: 33%;
+    height: fit-content;
+    width: 48%;
+    border-radius: 10px;
+    padding: 25px;
+  }
+  .budget > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+  }
+  .budget > div > h2 {
+    color: #ffffff;
+  }
+
+  .balance {
+    background-color: #111714;
+    height: fit-content;
+    width: 48%;
+    border-radius: 10px;
+    padding: 25px;
+  }
+  .balance > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+  }
+  .balance > div > h2 {
+    color: #ffffff;
+  }
+
+  /******************** Spending overview ********************/
+  .spending-overview {
+    height: 25rem;
+    width: 100%;
+    background-color: #111714;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .spending-overview > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .spending-overview > h3 {
+    color: #ffffff;
+  }
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+  /****************** Recent Transactions ******************/
+  .recent-transactions-container > h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .recent-transactions {
+    border: 1px;
+  }
+  .headings {
+    display: flex;
+    color: #ffffff;
+    margin-bottom: 13px;
+    width: 100%;
+    padding: 10px;
+  }
+  .headings > h4:nth-child(1) {
+    width: 40%;
+    margin-right: 8px;
+  }
+  .headings > h4:nth-child(2) {
+    width: 34%;
+    margin-right: 10px;
+  }
+  .headings > h4:nth-child(4) {
+    width: 20%;
+  }
+  hr {
+    height: 1px;
+    width: 100%;
+    background-color: #324339;
+  }
+  .transactions {
+    height: fit-content;
+    background-color: #111714;
+    border-radius: 0px 0px 8px 8px;
+  }
+  .transactions-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .transactions-list > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+  }
+  .transactions-list > li > p {
+    height: fit-content;
+  }
+  .transactions-list > li > p:nth-child(1) {
+    width: 42%;
+    margin-right: 8px;
+    color: #acaeac;
+  }
+  .transactions-list > li > p:nth-child(2) {
+    color: #94ac9d;
+    width: 34%;
+    margin-right: 10px;
+    word-break: break-all;
+  }
+  .transactions-list > li > p:nth-child(4) {
+    color: #f1f1f1;
+    width: 23%;
+    word-break: break-all;
+  }
+
+  /**************** Add expense page and add budget page styling ****************/
+  .container > div {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .container > div > h2 {
+    color: #ffffff;
+  }
+  .container > div > p {
+    font-size: 14px;
+    color: #8b8f8d;
+  }
+
+  form > label {
+    display: block;
+    color: #cfd0d0;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  form > input {
+    height: 3rem;
+    margin-bottom: 10px;
+    background-color: #1c2620;
+    width: 100%;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    color: #ffffff;
+  }
+  form > select {
+    margin-bottom: 10px;
+    height: 3rem;
+    background-color: #1c2620;
+    color: #ffffff;
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    outline: none;
+  }
+  form > select > option {
+    border: 0;
+  }
+  form > textarea {
+    height: 3rem;
+    background-color: #1c2620;
+    width: 100%;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    color: #ffffff;
+    height: 10rem;
+    margin-bottom: 5px;
+  }
+  form > div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  form > div > button {
+    width: fit-content;
+    height: 2.5rem;
+    width: 30%;
+    color: #000100;
+    background-color: #38e07b;
+    border-radius: 5px;
+  }
+
+  button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #76eba5;
+  }
+
+  /***************** Transactions Page Styling*****************/
+  .recent-transactions-container > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .recent-transactions-container > div:nth-child(1) > button {
+    height: fit-content;
+    border-radius: 5px;
+    color: #000100;
+    background-color: #38e07b;
+    padding: 5px;
   }
 }
-nav {
-  width: 100%;
-  height: 90vh;
-  padding: 20px;
-  margin-top: -2px;
-  position: fixed;
-  background-color: #1a231f;
-  animation: navmove 0.5s ease-in;
-}
-nav > ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-nav > ul > li {
-  color: #000100;
-  font-size: 20px;
-  width: 100%;
-  height: 4rem;
-  text-align: center;
-  align-items: center;
-}
-nav > ul > li > a {
-  text-decoration: none;
-  color: #ffffff;
-}
-.nav_icons {
-  width: 25px;
-  height: 25px;
-  margin-bottom: -5px;
-  margin-right: 5px;
-}
-.zozo {
-  margin-bottom: -5px;
-  margin-right: 5px;
-}
-main {
-  padding: 20px;
+
+/*************************Breakpoint*************************/
+/* Tablet screen */
+@media (min-width: 768px) and (max-width: 1024px) {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+  }
+  html {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .hidden-lg {
+    display: none;
+  }
+  body {
+    background-color: #111714;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  /************************ General code ************************/
+  div {
+    flex-wrap: wrap;
+  }
+  h2 {
+    word-break: break-all;
+  }
+  .input-form-error {
+    border: 0.5px solid #d73328;
+  }
+  .error-msg {
+    font-size: 13px;
+    color: #d73328;
+    margin-bottom: 5px;
+    margin-top: -5px;
+  }
+
+  /******************************* Header styling *******************************/
+  header {
+    height: 100vh;
+    width: 40%;
+    position: sticky;
+    top: 0;
+    background-color: #1a231f;
+    padding: 20px;
+    background-color: #111714;
+  }
+  header > div {
+    width: 100%;
+    margin-top: -2px;
+    margin-bottom: 15px;
+  }
+  header div > h1 > a {
+    color: #37da78;
+    width: fit-content;
+    text-decoration: none;
+  }
+  header > div > i {
+    font-size: 30px;
+  }
+  header > div > img {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin-right: -5px;
+  }
+
+  nav {
+    width: fit-content;
+    margin-top: -2px;
+    position: fixed;
+    background-color: #111714;
+    animation: navmove 0.5s ease-in;
+  }
+  nav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav > ul > li {
+    color: #000100;
+    font-size: 20px;
+    height: 4rem;
+    align-items: center;
+  }
+  nav > ul > li > a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .nav_icons {
+    width: 25px;
+    height: 25px;
+    margin-bottom: -5px;
+    margin-right: 5px;
+  }
+  .zozo {
+    margin-bottom: -5px;
+    margin-right: 5px;
+  }
+
+  /******************** Dashboard section ********************/
+  main {
+    padding: 20px;
+    width: 60%;
+    border-radius: 50px 0px 0px 0px;
+    background-color: #1a231f;
+  }
+  .main-dashboard-overview {
+    height: fit-content;
+  }
+  .dashboard-highlight {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  .dashboard-highlight > h1 {
+    color: #ffffff;
+  }
+  .dashboard-highlight > a > button {
+    height: 2rem;
+    width: 9rem;
+    border-radius: 5px;
+    color: #000100;
+    background-color: #38e07b;
+  }
+  .spending-budget-balance-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .spending {
+    background-color: #111714;
+    height: 8rem;
+    width: 8.5rem;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 25px;
+  }
+  .spending > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .spending > div > h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
+  .budget-balance-container {
+    display: flex;
+    width: 66%;
+    margin-bottom: 20px;
+    height: fit-content;
+    justify-content: space-between;
+  }
+  .budget {
+    background-color: #111714;
+    height: 8rem;
+    width: 8.5rem;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .budget > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .budget > div > h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
+
+  .balance {
+    background-color: #111714;
+    height: 8rem;
+    width: 8.5rem;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .balance > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .balance > div > h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
+
+  /******************** Spending overview ********************/
+  .spending-overview {
+    width: 100%;
+    height: fit-content;
+    background-color: #111714;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  .spending-overview > div {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+   
+  }
+  .spending-overview > h3 {
+    color: #ffffff;
+  }
+  canvas {
+    width: 100%;
+  }
+
+  /****************** Recent Transactions ******************/
+  .recent-transactions-container > h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .recent-transactions {
+    border: 1px;
+  }
+  .headings {
+    display: flex;
+    color: #ffffff;
+    margin-bottom: 13px;
+    width: 100%;
+    padding: 10px;
+  }
+  .headings > h4:nth-child(1) {
+    width: 37%;
+    margin-right: 9px;
+  }
+  .headings > h4:nth-child(2) {
+    width: 20%;
+    margin-right: 5px;
+  }
+  .headings > h4:nth-child(3) {
+    width: 17%;
+    margin-right: 15px;
+  }
+  .headings > h4:nth-child(4) {
+    width: 18%;
+  }
+  hr {
+    height: 1px;
+    width: 100%;
+    background-color: #324339;
+  }
+  .transactions {
+    height: fit-content;
+    background-color: #111714;
+    border-radius: 0px 0px 8px 8px;
+  }
+  .transactions-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .transactions-list > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+  }
+  .transactions-list > li > p {
+    height: fit-content;
+  }
+  .transactions-list > li > p:nth-child(1) {
+    width: 40%;
+    margin-right: 8px;
+    color: #acaeac;
+  }
+  .transactions-list > li > p:nth-child(2) {
+    color: #94ac9d;
+    width: 20%;
+    margin-right: 10px;
+    word-break: break-all;
+  }
+  .transactions-list > li > p:nth-child(3) {
+    color: #94ac9d;
+    width: 20%;
+    margin-right: 10px;
+    word-break: break-all;
+  }
+  .transactions-list > li > p:nth-child(4) {
+    color: #f1f1f1;
+    width: 20%;
+    word-break: break-all;
+  }
+
+  /**************** Add expense page and add budget page styling ****************/
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container > div {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .container > div > h2 {
+    color: #ffffff;
+  }
+  .container > div > p {
+    font-size: 14px;
+    color: #8b8f8d;
+  }
+  .form-section {
+    width: 80%;
+  }
+  form > label {
+    display: block;
+    color: #cfd0d0;
+    margin: auto;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  form > input {
+    height: 3rem;
+    margin-bottom: 10px;
+    background-color: #1c2620;
+    width: 100%;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    color: #ffffff;
+  }
+  form > select {
+    margin-bottom: 10px;
+    height: 3rem;
+    background-color: #1c2620;
+    color: #ffffff;
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    outline: none;
+  }
+  form > select > option {
+    border: 0;
+  }
+  form > textarea {
+    height: 3rem;
+    background-color: #1c2620;
+    width: 100%;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    color: #ffffff;
+    height: 10rem;
+    margin-bottom: 5px;
+  }
+  form > div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  form > div > button {
+    width: fit-content;
+    height: 2.5rem;
+    width: 30%;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #000100;
+    background-color: #38e07b;
+  }
+
+  button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #76eba5;
+  }
+
+  /* Transactions Page Styling*/
+  .recent-transactions-container > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .recent-transactions-container > div:nth-child(1) > button {
+    height: fit-content;
+    border-radius: 5px;
+    color: #000100;
+    background-color: #38e07b;
+    padding: 5px;
+  }
 }
 
-/******************** Dashboard section ********************/
-.main-dashboard-overview {
-  height: fit-content;
-}
-.dashboard-highlight {
-  display: flex;
-  height: fit-content;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-.dashboard-highlight > h1 {
-  color: #ffffff;
-}
-.dashboard-highlight > a > button {
-  height: 2rem;
-  border-radius: 5px;
-  color: #000100;
-  background-color: #38e07b;
-}
-.spending {
-  background-color: #111714;
-  height: 6.6rem;
-  /* height: 50%; */
-  height: fit-content;
-  width: 100%;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 25px;
-}
-.spending > div > h6 {
-  color: #89a092;
-  margin-bottom: 10px;
-}
-.spending > div > h2 {
-  color: #ffffff;
-}
-.budget-balance-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  height: fit-content;
-}
-.budget {
-  background-color: #111714;
-  height: 33%;
-  /* height: 6.6rem; */
-  height: fit-content;
-  width: 48%;
-  border-radius: 10px;
-  padding: 25px;
-}
-.budget > div > h6 {
-  color: #89a092;
-  margin-bottom: 10px;
-}
-.budget > div > h2 {
-  color: #ffffff;
+/*************************Breakpoint*************************/
+/* Laptop screen */
+@media (min-width: 1024px) and (max-width: 1300px) {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+  }
+  html {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .hidden-lg {
+    display: none;
+  }
+  body {
+    background-color: #111714;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  /************************ General code ************************/
+  div {
+    flex-wrap: wrap;
+  }
+  h2 {
+    word-break: break-all;
+  }
+  .input-form-error {
+    border: 0.5px solid #d73328;
+  }
+  .error-msg {
+    font-size: 13px;
+    color: #d73328;
+    margin-bottom: 5px;
+    margin-top: -5px;
+  }
+
+  /******************************* Header styling *******************************/
+  header {
+    height: 100vh;
+    width: 30%;
+    position: sticky;
+    top: 0;
+    background-color: #1a231f;
+    padding: 40px;
+    background-color: #111714;
+  }
+  header > div {
+    width: 100%;
+    margin-top: -2px;
+    margin-bottom: 15px;
+  }
+  header div > h1 > a {
+    color: #37da78;
+    width: fit-content;
+    text-decoration: none;
+  }
+  header > div > i {
+    font-size: 30px;
+  }
+  header > div > img {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin-right: -5px;
+  }
+
+  nav {
+    width: fit-content;
+    margin-top: -2px;
+    position: fixed;
+    background-color: #111714;
+    animation: navmove 0.5s ease-in;
+  }
+  nav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav > ul > li {
+    color: #000100;
+    font-size: 20px;
+    height: 4rem;
+    align-items: center;
+  }
+  nav > ul > li > a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .nav_icons {
+    width: 25px;
+    height: 25px;
+    margin-bottom: -5px;
+    margin-right: 5px;
+  }
+  .zozo {
+    margin-bottom: -5px;
+    margin-right: 5px;
+  }
+
+  /******************** Dashboard section ********************/
+  main {
+    padding: 30px;
+    width: 70%;
+    border-radius: 50px 0px 0px 0px;
+    background-color: #1a231f;
+  }
+  .main-dashboard-overview {
+    height: fit-content;
+  }
+  .dashboard-highlight {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  .dashboard-highlight > h1 {
+    color: #ffffff;
+  }
+  .dashboard-highlight > a > button {
+    height: 2rem;
+    width: 9rem;
+    border-radius: 5px;
+    color: #000100;
+    background-color: #38e07b;
+  }
+  .spending-budget-balance-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .spending {
+    background-color: #111714;
+    height: 10rem;
+    width: 12rem;
+    border-radius: 10px;
+    padding: 35px;
+    margin-bottom: 25px;
+  }
+  .spending > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .spending > div > h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
+  .budget-balance-container {
+    display: flex;
+    width: 65%;
+    margin-bottom: 20px;
+    height: fit-content;
+    justify-content: space-between;
+  }
+  .budget {
+    background-color: #111714;
+    height: 10rem;
+    width: 12rem;
+    border-radius: 10px;
+    padding: 35px;
+  }
+  .budget > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .budget > div > h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
+
+  .balance {
+    background-color: #111714;
+    height: 10rem;
+    width: 12rem;
+    border-radius: 10px;
+    padding: 35px;
+  }
+  .balance > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .balance > div > h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
+
+  /******************** Spending overview ********************/
+  .spending-overview {
+    width: 100%;
+    height: fit-content;
+    background-color: #111714;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  .spending-overview > div {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+  }
+  .spending-overview > h3 {
+    color: #ffffff;
+  }
+  canvas {
+    width: 100%;
+  }
+
+  /****************** Recent Transactions ******************/
+  .recent-transactions-container > h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .recent-transactions {
+    border: 1px;
+  }
+  .headings {
+    display: flex;
+    color: #ffffff;
+    margin-bottom: 13px;
+    width: 100%;
+    padding: 10px;
+  }
+  .headings > h4:nth-child(1) {
+    width: 37%;
+    margin-right: 15px;
+  }
+  .headings > h4:nth-child(2) {
+    width: 20%;
+    margin-right: 5px;
+  }
+  .headings > h4:nth-child(3) {
+    width: 17%;
+    margin-right: 23px;
+  }
+  .headings > h4:nth-child(4) {
+    width: 15%;
+  }
+  hr {
+    height: 1px;
+    width: 100%;
+    background-color: #324339;
+  }
+  .transactions {
+    height: fit-content;
+    background-color: #111714;
+    border-radius: 0px 0px 8px 8px;
+  }
+  .transactions-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .transactions-list > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+  }
+  .transactions-list > li > p {
+    height: fit-content;
+  }
+  .transactions-list > li > p:nth-child(1) {
+    width: 40%;
+    margin-right: 8px;
+    color: #acaeac;
+  }
+  .transactions-list > li > p:nth-child(2) {
+    color: #94ac9d;
+    width: 20%;
+    margin-right: 10px;
+    word-break: break-all;
+  }
+  .transactions-list > li > p:nth-child(3) {
+    color: #94ac9d;
+    width: 20%;
+    margin-right: 10px;
+    word-break: break-all;
+  }
+  .transactions-list > li > p:nth-child(4) {
+    color: #f1f1f1;
+    width: 20%;
+    word-break: break-all;
+  }
+
+  /**************** Add expense page and add budget page styling ****************/
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container > div {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .container > div > h2 {
+    color: #ffffff;
+  }
+  .container > div > p {
+    font-size: 14px;
+    color: #8b8f8d;
+  }
+  .form-section {
+    width: 50%;
+  }
+  form > label {
+    display: block;
+    color: #cfd0d0;
+    margin: auto;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  form > input {
+    height: 3rem;
+    margin-bottom: 10px;
+    background-color: #1c2620;
+    width: 100%;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    color: #ffffff;
+  }
+  form > select {
+    margin-bottom: 10px;
+    height: 3rem;
+    background-color: #1c2620;
+    color: #ffffff;
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    outline: none;
+  }
+  form > select > option {
+    border: 0;
+  }
+  form > textarea {
+    height: 3rem;
+    background-color: #1c2620;
+    width: 100%;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    color: #ffffff;
+    height: 10rem;
+    margin-bottom: 5px;
+  }
+  form > div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  form > div > button {
+    width: fit-content;
+    height: 2.5rem;
+    width: 30%;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #000100;
+    background-color: #38e07b;
+  }
+
+  button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #76eba5;
+  }
+
+  /* Transactions Page Styling*/
+  .recent-transactions-container > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .recent-transactions-container > div:nth-child(1) > button {
+    height: fit-content;
+    border-radius: 5px;
+    color: #000100;
+    background-color: #38e07b;
+    padding: 5px;
+  }
 }
 
-.balance {
-  background-color: #111714;
-  /* height: 6.6rem; */
-  height: fit-content;
-  width: 48%;
-  border-radius: 10px;
-  padding: 25px;
-}
-.balance > div > h6 {
-  color: #89a092;
-  margin-bottom: 10px;
-}
-.balance > div > h2 {
-  color: #ffffff;
-}
+/*************************Breakpoint*************************/
+/* Laptop screen */
+@media (min-width: 1440px) and (max-width: 2560px) {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+  }
+  html {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .hidden-lg {
+    display: none;
+  }
+  body {
+    background-color: #111714;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
 
-/******************** Spending overview ********************/
-.spending-overview {
-  height: 25rem;
-  width: 100%;
-  background-color: #111714;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-/* .spending-overview > div > div {
-  display: flex;
-  justify-content: space-evenly;
-} */
-.spending-overview > div > div > p {
-  color: #98b0a2;
-  font-size: 14px;
-}
-.spending-overview > div > h3 {
-  /* margin-bottom: 20rem; */
-  color: #ffffff;
-}
+  /************************ General code ************************/
+  div {
+    flex-wrap: wrap;
+  }
+  h2 {
+    word-break: break-all;
+  }
+  .input-form-error {
+    border: 0.5px solid #d73328;
+  }
+  .error-msg {
+    font-size: 13px;
+    color: #d73328;
+    margin-bottom: 5px;
+    margin-top: -5px;
+  }
 
-/****************** Recent Transactions ******************/
-.recent-transactions-container > h2 {
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-.recent-transactions {
-  border: 1px;
-}
-.headings {
-  display: flex;
-  color: #ffffff;
-  margin-bottom: 13px;
-  width: 100%;
-  /* flex-wrap: wrap; */
-  padding: 10px;
-}
-.headings > h4:nth-child(1) {
-  width: 40%;
-  margin-right: 8px;
-}
-.headings > h4:nth-child(2) {
-  width: 34%;
-  margin-right: 10px;
-}
-.headings > h4:nth-child(4) {
-  width: 20%;
-}
-hr {
-  height: 1px;
-  width: 100%;
-  background-color: #324339;
-}
-.transactions {
-  height: fit-content;
-  background-color: #111714;
-  border-radius: 0px 0px 8px 8px;
-}
-.transactions-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: fit-content;
-}
+  /******************************* Header styling *******************************/
+  header {
+    height: 100vh;
+    width: 26%;
+    position: sticky;
+    top: 0;
+    background-color: #1a231f;
+    padding: 40px;
+    background-color: #111714;
+  }
+  header > div {
+    width: 100%;
+    margin-top: -2px;
+    margin-bottom: 15px;
+  }
+  header div > h1 > a {
+    color: #37da78;
+    width: fit-content;
+    text-decoration: none;
+  }
+  header > div > i {
+    font-size: 30px;
+  }
+  header > div > img {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin-right: -5px;
+  }
 
-.transactions-list > li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: fit-content;
-  padding: 10px;
-}
-.transactions-list > li > p {
-  height: fit-content;
-}
-.transactions-list > li > p:nth-child(1) {
-  width: 42%;
-  margin-right: 8px;
-  color: #acaeac;
-}
-.transactions-list > li > p:nth-child(2) {
-  color: #94ac9d;
-  width: 34%;
-  margin-right: 10px;
-  word-break: break-all;
-}
-.transactions-list > li > p:nth-child(4) {
-  color: #f1f1f1;
-  width: 23%;
-  word-break: break-all;
-}
+  nav {
+    width: fit-content;
+    margin-top: -2px;
+    position: fixed;
+    background-color: #111714;
+    animation: navmove 0.5s ease-in;
+  }
+  nav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav > ul > li {
+    color: #000100;
+    font-size: 20px;
+    height: 4rem;
+    align-items: center;
+  }
+  nav > ul > li > a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .nav_icons {
+    width: 25px;
+    height: 25px;
+    margin-bottom: -5px;
+    margin-right: 5px;
+  }
+  .zozo {
+    margin-bottom: -5px;
+    margin-right: 5px;
+  }
 
-/**************** Add expense page and add budget page styling ****************/
-.container > div {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.container > div > h2 {
-  color: #ffffff;
-}
-.container > div > p {
-  font-size: 14px;
-  color: #8b8f8d;
-  /* color: #94ac9d; */
-}
+  /******************** Dashboard section ********************/
+  main {
+    padding: 40px;
+    width: 74%;
+    border-radius: 50px 0px 0px 0px;
+    background-color: #1a231f;
+  }
+  .main-dashboard-overview {
+    height: fit-content;
+  }
+  .dashboard-highlight {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  .dashboard-highlight > h1 {
+    color: #ffffff;
+  }
+  .dashboard-highlight > a > button {
+    height: 2rem;
+    width: 12rem;
+    border-radius: 5px;
+    color: #000100;
+    background-color: #38e07b;
+  }
+  .spending-budget-balance-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .spending {
+    background-color: #111714;
+    height: 10rem;
+    width: 18rem;
+    border-radius: 10px;
+    padding: 35px;
+    margin-bottom: 25px;
+  }
+  .spending > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .spending > div > h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
+  .budget-balance-container {
+    display: flex;
+    width: 63%;
+    margin-bottom: 20px;
+    height: fit-content;
+    justify-content: space-between;
+  }
+  .budget {
+    background-color: #111714;
+    height: 10rem;
+    width: 18rem;
+    border-radius: 10px;
+    padding: 35px;
+  }
+  .budget > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .budget > div > h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
 
-form > label {
-  display: block;
-  color: #cfd0d0;
-  margin-bottom: 8px;
-  font-size: 12px;
-  font-weight: 500;
-}
-form > input {
-  height: 3rem;
-  margin-bottom: 10px;
-  background-color: #1c2620;
-  width: 100%;
-  border: 0.5px solid #3d5245;
-  border-radius: 5px;
-  padding: 10px;
-  outline: none;
-  color: #ffffff;
-}
-form > select {
-  margin-bottom: 10px;
-  height: 3rem;
-  background-color: #1c2620;
-  color: #ffffff;
-  border: 0;
-  width: 100%;
-  padding: 10px;
-  border: 0.5px solid #3d5245;
-  border-radius: 5px;
-  outline: none;
-  /* appearance: none; */
-}
-form > select > option {
-  border: 0;
-}
-form > textarea {
-  height: 3rem;
-  background-color: #1c2620;
-  width: 100%;
-  border: 0.5px solid #3d5245;
-  border-radius: 5px;
-  padding: 10px;
-  outline: none;
-  color: #ffffff;
-  height: 10rem;
-  margin-bottom: 5px;
-}
-form > div {
-  width: 100%;
-  display: flex;
-  justify-content: end;
-}
-form > div > button {
-  width: fit-content;
-  height: 2.5rem;
-  width: 30%;
-  border-radius: 20px;
-  color: #000100;
-  background-color: #38e07b;
-}
+  .balance {
+    background-color: #111714;
+    height: 10rem;
+    width: 18rem;
+    border-radius: 10px;
+    padding: 35px;
+  }
+  .balance > div > h6 {
+    color: #89a092;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .balance > div > h2 {
+    color: #ffffff;
+    font-size: 30px;
+  }
 
-button {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #76eba5;
-}
+  /******************** Spending overview ********************/
+  .spending-overview {
+    width: 100%;
+    height: fit-content;
+    background-color: #111714;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  .spending-overview > div {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+  }
+  .spending-overview > h3 {
+    color: #ffffff;
+  }
+  canvas {
+    width: 100%;
+  }
 
-/* Transactions Page Styling*/
-.recent-transactions-container > div:nth-child(1) {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-.recent-transactions-container > div:nth-child(1) > button {
-  height: fit-content;
-  border-radius: 5px;
-  color: #000100;
-  background-color: #38e07b;
-  padding: 5px;
+  /****************** Recent Transactions ******************/
+  .recent-transactions-container > h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .recent-transactions {
+    border: 1px;
+  }
+  .headings {
+    display: flex;
+    color: #ffffff;
+    margin-bottom: 13px;
+    width: 100%;
+    padding: 10px;
+  }
+  .headings > h4:nth-child(1) {
+    width: 37%;
+    margin-right: 27px;
+  }
+  .headings > h4:nth-child(2) {
+    width: 20%;
+    margin-right: 7px;
+  }
+  .headings > h4:nth-child(3) {
+    width: 17%;
+    margin-right: 35px;
+  }
+  .headings > h4:nth-child(4) {
+    width: 15%;
+  }
+  hr {
+    height: 1px;
+    width: 100%;
+    background-color: #324339;
+  }
+  .transactions {
+    height: fit-content;
+    background-color: #111714;
+    border-radius: 0px 0px 8px 8px;
+  }
+  .transactions-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .transactions-list > li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+  }
+  .transactions-list > li > p {
+    height: fit-content;
+  }
+  .transactions-list > li > p:nth-child(1) {
+    width: 40%;
+    margin-right: 8px;
+    color: #acaeac;
+  }
+  .transactions-list > li > p:nth-child(2) {
+    color: #94ac9d;
+    width: 20%;
+    margin-right: 10px;
+    word-break: break-all;
+  }
+  .transactions-list > li > p:nth-child(3) {
+    color: #94ac9d;
+    width: 20%;
+    margin-right: 10px;
+    word-break: break-all;
+  }
+  .transactions-list > li > p:nth-child(4) {
+    color: #f1f1f1;
+    width: 20%;
+    word-break: break-all;
+  }
+
+  /**************** Add expense page and add budget page styling ****************/
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container > div {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .container > div > h2 {
+    color: #ffffff;
+  }
+  .container > div > p {
+    font-size: 14px;
+    color: #8b8f8d;
+  }
+  .form-section {
+    width: 50%;
+  }
+  form > label {
+    display: block;
+    color: #cfd0d0;
+    margin: auto;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  form > input {
+    height: 3rem;
+    margin-bottom: 10px;
+    background-color: #1c2620;
+    width: 100%;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    color: #ffffff;
+  }
+  form > select {
+    margin-bottom: 10px;
+    height: 3rem;
+    background-color: #1c2620;
+    color: #ffffff;
+    border: 0;
+    width: 100%;
+    padding: 10px;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    outline: none;
+  }
+  form > select > option {
+    border: 0;
+  }
+  form > textarea {
+    height: 3rem;
+    background-color: #1c2620;
+    width: 100%;
+    border: 0.5px solid #3d5245;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    color: #ffffff;
+    height: 10rem;
+    margin-bottom: 5px;
+  }
+  form > div {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  form > div > button {
+    width: fit-content;
+    height: 2.5rem;
+    width: 30%;
+    border-radius: 20px;
+    color: #000100;
+    background-color: #38e07b;
+  }
+
+  button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #76eba5;
+  }
+
+  /* Transactions Page Styling*/
+  .recent-transactions-container > div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  .recent-transactions-container > div:nth-child(1) > button {
+    height: fit-content;
+    border-radius: 5px;
+    color: #000100;
+    background-color: #38e07b;
+    padding: 5px;
+  }
 }

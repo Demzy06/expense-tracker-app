@@ -20,67 +20,67 @@
         <img
           src="./src/img/hamburger-icon.png"
           alt=""
-          class="hamburger-icon nav-open-btn"
+          class="hamburger-icon nav-open-btn hidden-lg"
         />
         <img
           src="./src/img/close.png"
           alt=""
-          class="close-icon hidden nav-close-btn"
+          class="close-icon hidden nav-close-btn hidden-lg"
         />
       </div>
+
+      <nav class="nav hidden">
+        <ul>
+          <li>
+            <a href="/index.html"
+              ><img
+                src="./src/img/dashboardsvg.png"
+                class="nav_icons"
+                alt="dashboard-icon"
+              />Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="/transactionsPage.html"
+              ><img
+                src="./src/img/receipt.png"
+                alt="receipt-icon"
+                class="nav_icons"
+              />Transactions</a
+            >
+          </li>
+          <li>
+            <a href="/budgetPage.html"
+              ><img
+                src="./src/img/budget.png"
+                alt="budget-icon"
+                class="nav_icons"
+              />Add / Update Budget</a
+            >
+          </li>
+          <li>
+            <a href="/index.html"
+              ><img
+                src="./src/img/bar.png"
+                alt="bar-icon"
+                class="nav_icons"
+              />Reports</a
+            >
+          </li>
+          <li>
+            <a href="/index.html"
+              ><img
+                src="./src/img/setting.png"
+                alt="setting-icon"
+                class="nav_icons"
+              />Settings</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <nav class="nav hidden">
-      <ul>
-        <li>
-          <a href="/index.html"
-            ><img
-              src="./src/img/dashboardsvg.png"
-              class="nav_icons"
-              alt="dashboard-icon"
-            />Dashboard</a
-          >
-        </li>
-        <li>
-          <a href="/transactionsPage.html"
-            ><img
-              src="./src/img/receipt.png"
-              alt="receipt-icon"
-              class="nav_icons"
-            />Transactions</a
-          >
-        </li>
-        <li>
-          <a href="/budgetPage.html"
-            ><img
-              src="./src/img/budget.png"
-              alt="budget-icon"
-              class="nav_icons"
-            />Add / Update Budget</a
-          >
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img
-              src="./src/img/bar.png"
-              alt="bar-icon"
-              class="nav_icons"
-            />Reports</a
-          >
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img
-              src="./src/img/setting.png"
-              alt="setting-icon"
-              class="nav_icons"
-            />Settings</a
-          >
-        </li>
-      </ul>
-    </nav>
-    
-    <main class="container">
+    <main class="container form-container">
       <div>
         <h2>Add New Expense</h2>
         <p>Enter the details of your expense below</p>
@@ -95,7 +95,7 @@
             id="amount"
             placeholder="$ 0.00"
           />
-          <p class="error-msg hidden">This field is required</p>
+          <p class="error-msg hidden hidden-lg">This field is required</p>
           <label for="category">Category</label>
           <select name="category" id="category" class="select">
             <option disabled selected>Select a category</option>
@@ -105,10 +105,10 @@
             <option value="Utilities">Utilities</option>
             <option value="Others">Others</option>
           </select>
-          <p class="error-msg hidden">This field is required</p>
+          <p class="error-msg hidden hidden-lg">This field is required</p>
           <label for="date">Date</label>
           <input type="date" name="date" id="date" class="date" />
-          <p class="error-msg hidden">This field is required</p>
+          <p class="error-msg hidden hidden-lg">This field is required</p>
           <label for="description">Description</label>
           <textarea
             name="description"
@@ -117,7 +117,7 @@
             type="text"
             placeholder="Add a description..."
           ></textarea>
-          <p class="error-msg hidden">This field is required</p>
+          <p class="error-msg hidden hidden-lg">This field is required</p>
           <div>
             <button class="add-expense-btn">Add Expense</button>
           </div>

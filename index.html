@@ -20,65 +20,65 @@
         <img
           src="./src/img/hamburger-icon.png"
           alt=""
-          class="hamburger-icon nav-open-btn"
+          class="hamburger-icon nav-open-btn hidden-lg"
         />
         <img
           src="./src/img/close.png"
           alt=""
-          class="close-icon hidden nav-close-btn"
+          class="close-icon hidden nav-close-btn hidden-lg"
         />
       </div>
-    </header>
 
-    <nav class="nav hidden">
-      <ul>
-        <li>
-          <a href="/index.html"
-            ><img
-              src="./src/img/dashboardsvg.png"
-              class="nav_icons"
-              alt="dashboard-icon"
-            />Dashboard</a
-          >
-        </li>
-        <li>
-          <a href="/transactionsPage.html"
-            ><img
-              src="./src/img/receipt.png"
-              alt="receipt-icon"
-              class="nav_icons"
-            />Transactions</a
-          >
-        </li>
-        <li>
-          <a href="/budgetPage.html"
-            ><img
-              src="./src/img/budget.png"
-              alt="budget-icon"
-              class="nav_icons"
-            />Add / Update Budget</a
-          >
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img
-              src="./src/img/bar.png"
-              alt="bar-icon"
-              class="nav_icons"
-            />Reports</a
-          >
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img
-              src="./src/img/setting.png"
-              alt="setting-icon"
-              class="nav_icons"
-            />Settings</a
-          >
-        </li>
-      </ul>
-    </nav>
+      <nav class="nav hidden">
+        <ul>
+          <li>
+            <a href="/index.html"
+              ><img
+                src="./src/img/dashboardsvg.png"
+                class="nav_icons"
+                alt="dashboard-icon"
+              />Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="/transactionsPage.html"
+              ><img
+                src="./src/img/receipt.png"
+                alt="receipt-icon"
+                class="nav_icons"
+              />Transactions</a
+            >
+          </li>
+          <li>
+            <a href="/budgetPage.html"
+              ><img
+                src="./src/img/budget.png"
+                alt="budget-icon"
+                class="nav_icons"
+              />Add / Update Budget</a
+            >
+          </li>
+          <li>
+            <a href="/index.html"
+              ><img
+                src="./src/img/bar.png"
+                alt="bar-icon"
+                class="nav_icons"
+              />Reports</a
+            >
+          </li>
+          <li>
+            <a href="/index.html"
+              ><img
+                src="./src/img/setting.png"
+                alt="setting-icon"
+                class="nav_icons"
+              />Settings</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <main class="dashboard">
       <section class="main-dashboard-overview">
@@ -88,41 +88,37 @@
             <button><i class="fa-solid fa-plus"></i>Add Transaction</button>
           </a>
         </div>
-        <div class="spending">
-          <div>
-            <h6>Total Spending</h6>
-            <h2 class="total-spend-value">$2,450</h2>
-          </div>
-        </div>
+        <div class="spending-budget-balance-container">
 
-        <div class="budget-balance-container">
-          <div class="budget">
+          <div class="spending">
             <div>
-              <h6>Budget</h6>
-              <h2 class="budget-value">$0</h2>
+              <h6>Total Spending</h6>
+              <h2 class="total-spend-value">$2,450</h2>
             </div>
           </div>
-
-          <div class="balance">
-            <div>
-              <h6>Total Balance</h6>
-              <h2 class="total-balance-value">$550</h2>
+          
+          <div class="budget-balance-container">
+            <div class="budget">
+              <div>
+                <h6>Budget</h6>
+                <h2 class="budget-value">$0</h2>
+              </div>
+            </div>
+            
+            <div class="balance">
+              <div>
+                <h6>Total Balance</h6>
+                <h2 class="total-balance-value">$550</h2>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section class="spending-overview">
+        <h3>Spending Overview</h3>
         <div>
-          <h3>Spending Overview</h3>
-          <canvas style="width: 800px" id="acquisitions"></canvas></div>
-          <!-- <div>
-            <p>Food</p>
-            <p>Transport</p>
-            <p>Entertainment</p>
-            <p>Utilities</p>
-            <p>Others</p>
-          </div> -->
+          <canvas style="width: 800px" id="acquisitions"></canvas>
         </div>
       </section>
 

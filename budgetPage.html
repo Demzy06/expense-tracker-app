@@ -12,7 +12,7 @@
     <title>Budget Page</title>
   </head>
   <body data-page="budget-page">
-    <header>
+  <header>
       <div class="app-identity">
         <h1>
           <a href="/index.html">FinTrack</a>
@@ -20,72 +20,73 @@
         <img
           src="./src/img/hamburger-icon.png"
           alt=""
-          class="hamburger-icon nav-open-btn"
+          class="hamburger-icon nav-open-btn hidden-lg"
         />
         <img
           src="./src/img/close.png"
           alt=""
-          class="close-icon hidden nav-close-btn"
+          class="close-icon hidden nav-close-btn hidden-lg"
         />
       </div>
+
+      <nav class="nav hidden">
+        <ul>
+          <li>
+            <a href="/index.html"
+              ><img
+                src="./src/img/dashboardsvg.png"
+                class="nav_icons"
+                alt="dashboard-icon"
+              />Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="/transactionsPage.html"
+              ><img
+                src="./src/img/receipt.png"
+                alt="receipt-icon"
+                class="nav_icons"
+              />Transactions</a
+            >
+          </li>
+          <li>
+            <a href="/budgetPage.html"
+              ><img
+                src="./src/img/budget.png"
+                alt="budget-icon"
+                class="nav_icons"
+              />Add / Update Budget</a
+            >
+          </li>
+          <li>
+            <a href="/index.html"
+              ><img
+                src="./src/img/bar.png"
+                alt="bar-icon"
+                class="nav_icons"
+              />Reports</a
+            >
+          </li>
+          <li>
+            <a href="/index.html"
+              ><img
+                src="./src/img/setting.png"
+                alt="setting-icon"
+                class="nav_icons"
+              />Settings</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <nav class="nav hidden">
-      <ul>
-        <li>
-          <a href="/index.html"
-            ><img
-              src="./src/img/dashboardsvg.png"
-              class="nav_icons"
-              alt="dashboard-icon"
-            />Dashboard</a
-          >
-        </li>
-        <li>
-          <a href="/transactionsPage.html"
-            ><img
-              src="./src/img/receipt.png"
-              alt="receipt-icon"
-              class="nav_icons"
-            />Transactions</a
-          >
-        </li>
-        <li>
-          <a href="/budgetPage.html"
-            ><img
-              src="./src/img/budget.png"
-              alt="budget-icon"
-              class="nav_icons"
-            />Add / Update Budget</a
-          >
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img
-              src="./src/img/bar.png"
-              alt="bar-icon"
-              class="nav_icons"
-            />Reports</a
-          >
-        </li>
-        <li>
-          <a href="/index.html"
-            ><img
-              src="./src/img/setting.png"
-              alt="setting-icon"
-              class="nav_icons"
-            />Settings</a
-          >
-        </li>
-      </ul>
-    </nav>
     
-    <main class="container">
+    <main class="container form-container">
       <div>
         <h2>Set Your Budget</h2>
         <p>Enter your budget below</p>
       </div>
-      <section class="form-section">
+      <section class="form-section ">
         <form class="budget-upload">
           <label for="budget">Enter Budget / Update Budget</label>
           <input
@@ -95,7 +96,7 @@
             id=""
             placeholder="$ 0.00"
           />
-          <p class="error-msg hidden">This field is required</p>
+          <p class="error-msg hidden hidden-lg">This field is required</p>
           <div>
             <button class="add-budget-btn">Add Budget</button>
           </div>
